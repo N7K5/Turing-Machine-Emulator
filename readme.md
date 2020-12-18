@@ -4,6 +4,9 @@
 
 ## [You can run it from browser here...](https://n7k5.github.io/Turing-Machine-Emulator/ "Turing machine emulator")
 
+## [How to use Video...](https://youtu.be/2G8WdhRxIH4 "How to use The emulator")
+
+
 ### Features:
 1. Unlimited transition function.
 2. Save and loding a machine.
