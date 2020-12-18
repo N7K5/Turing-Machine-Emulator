@@ -1,0 +1,408 @@
+
+@keyframes glow_err {
+    0% {background-color: #f06f59; border-color: #0a4ac9; border-radius: 2px;}
+    100% {background-color: #cf3862; border-color: #c30ac9; border-radius: 10px;}
+}
+
+@keyframes today_name {
+    0% {transform: rotate(20deg);}
+    10% {transform: rotate(10deg);}
+    20% {transform: rotate(15deg);}
+    30% {transform: rotate(-10deg);}
+    40% {transform: rotate(20deg);}
+    50% {transform: rotate(5deg);}
+    60% {transform: rotate(15deg);}
+    70% {transform: rotate(-10deg);}
+    80% {transform: rotate(10deg);}
+    90% {transform: rotate(5deg);}
+    100% {transform: rotate(-20deg);}
+}
+
+@keyframes hover_up_hover_container {
+    0% {transform: translateY(0px) translateX(0px);
+        box-shadow: 10px 10px 10px #ababab;}
+    100% {transform: translateY(4px) translateX(4px);
+        box-shadow: 15px 15px 15px #ababab;}
+}
+
+@keyframes drop_container_from_top {
+    0% {
+        top: -100%;
+        opacity: 0;
+    }
+    100% {
+        top: 10%;
+        opacity: 1;
+    }
+}
+
+@keyframes show_error_from_top {
+    0% {
+        top: -100%;
+        opacity: .5;
+    }
+    100% {
+        top: 20%;
+        opacity: 1;
+    }
+}
+
+@font-face {
+    font-family: terminal;
+    src: url('./../res/terminal_bold.ttf');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: lora;
+    text-align: center;
+}
+
+body {
+    background-color: #efefef;
+    background-image: url("./../res/14.png");
+}
+
+#page_title {
+    text-decoration: underline;
+    margin: 2px 0px 8px 0px; 
+}
+
+
+.states_item {
+    border:1px solid #000;
+    display: inline-block;
+    font-size: 120%;
+    border-radius: 4px;
+    margin: 3px;
+    padding: 2px 5px;
+    background-color: #ffbecf;
+}
+
+#remove_state {
+    font-size: 50%;
+    position: absolute;
+    right: 2px;
+    cursor: pointer;
+    color: #000;
+    border: 0px;
+    background-color: #eb6a81;
+    border-radius: 5px;
+    padding: 2px;
+    display: none;
+    /* top: 2px; */
+}
+
+.transition_item {
+    border:1px solid #000;
+    display: inline-block;
+    font-size: 120%;
+    border-radius: 4px;
+    margin: 3px;
+    padding: 2px 5px;
+    background-color: #ffbecf;
+}
+
+#remove_transition {
+    font-size: 50%;
+    position: absolute;
+    right: 2px;
+    cursor: pointer;
+    color: #000;
+    border: 0px;
+    background-color: #eb6a81;
+    border-radius: 5px;
+    padding: 2px;
+    display: none;
+    /* top: 2px; */
+}
+
+.button_run {
+    padding: 8px;
+    margin: 12px;
+    background-color: #e6ffe6;
+    font-size: 130%;
+    font-weight: bold;
+    border: 3px solid;
+    border-radius: 8px;
+    box-shadow: 3px 3px 1px #ababab;
+}
+.button_run:hover {
+    box-shadow: 5px 5px 2px #ababab;   
+}
+
+.button_stop {
+    padding: 8px;
+    margin: 12px;
+    background-color: #fadce1;
+    font-size: 130%;
+    font-weight: bold;
+    border: 3px solid;
+    border-radius: 8px;
+    box-shadow: 3px 3px 1px #ababab;
+}
+.button_stop:hover {
+    box-shadow: 5px 5px 2px #ababab;   
+}
+
+.btn_1 {
+    padding: 8px 14px;
+    margin: 8px;
+    box-shadow: 10px 10px 10px #ababab;
+}
+.btn_2 {
+    padding: 5px 10px;
+    margin: 5px;
+    box-shadow: 4px 4px 1px #ababab;
+}
+.btn_3 {
+    padding: 5px 10px;
+    margin: 5px;
+    border: solid 2px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px #ababab;
+    font-size: 130%;
+}
+.btn_3:hover {
+    box-shadow: 3px 3px 2px #9a9a9a;
+
+}
+
+.ip_field {
+    font-size: 120%;
+    padding: 5px;
+}
+
+#machine_def {
+    background-color: #ddffdd;
+    position: fixed;
+    width: 25%;
+    height: 90%;
+    left: 2%;
+    top: 5%;
+    z-index: 4;
+    border: 2px solid;
+    border-radius: 15px 5px 5px 15px;
+    padding: 5px;
+    overflow-y:scroll;
+}
+
+#hover_container {
+    border: solid;
+    width: 65%;
+    height: 70%;
+    position: fixed;
+    padding: 10px;
+    top: 10%;
+    left: 30%;
+    background-color: #dedede;
+    box-shadow: 10px 10px 10px #ababab;
+    border-radius: 15px;
+
+    top: -100%;
+    
+}
+
+/* #create_machine {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+} */
+
+#create_machine_container {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+}
+#non_hover {
+    width: 65%;
+    position: fixed;
+    padding: 10px;
+    left: 30%;
+    /* filter: blur(3px); */
+}
+
+.config_title {
+    font-size: 150%;
+    padding: 10px 5px 5px 5px;
+    border: solid;
+    margin: 5px 10px 5px 10px;
+    border-width: 0px 0px 2px 0px;
+}
+
+.main_title {
+    font-size: 170%;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    font-weight: bold;
+    position: sticky;
+    top: 0px;
+    background-color: #bbeebb;
+}
+
+/* .current_tape {
+    position: absolute;
+    width: 100%;
+    bottom: 5%;
+    right: 0%;
+} */
+
+.tape_config_title {
+    font-size: 150%;
+    padding: 5px 5px 5px 5px;
+    border: solid;
+    margin: 10px 10px 5px 10px;
+    border-width: 2px 0px 2px 0px;
+}
+.current_state_config_title {
+    font-size: 120%;
+    padding: 5px 5px 0px 5px;
+    border: solid;
+    margin: 20px 10px 5px 10px;
+    border-width: 2px 0px 0px 0px;
+}
+
+#error {
+    width:50%;
+    height: 30%;
+    position: fixed;
+    top: -100%;
+    left: 35%;
+    background-color: #e8a2c1;
+    padding: 30px 20px 10px 20px;
+    border: 8px solid;
+    border-radius: 20px;
+    opacity: 0.9;
+    font-size: 140%;
+    font-family: cursive;
+    box-shadow: 10px 10px 7px #888;
+    animation-duration: .5s;
+}
+
+#error_x {
+    font-size: 130%;
+    background-color: #d90061;
+    color: #fff;
+    padding: 4px 8px;
+    border: 3px solid;
+    border-color: #700032;
+    border-radius: 50px;
+    font-family: monospace;
+    font-weight: bold;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+#error_x:hover {
+    background-color: #b80454;
+    border-color: #470121;
+}
+
+#popup {
+    width:65%;
+    min-height: 30%;
+    max-height: 60%;
+    overflow-y: scroll;
+    overflow-x: wrap;
+    position: fixed;
+    top: -100%;
+    left: 30%;
+    background-color: #c4e7ff;
+    color: #063f66;
+    padding: 30px 20px 10px 20px;
+    border: 8px solid;
+    border-radius: 20px;
+    opacity: 0.9;
+    font-size: 140%;
+    font-family: cursive;
+    box-shadow: 10px 10px 7px #888;
+    animation-duration: .5s;
+}
+
+#popup_x {
+    font-size: 130%;
+    background-color: #d10042;
+    color: #fff;
+    padding: 4px 8px;
+    border: 3px solid;
+    border-color: #700032;
+    border-radius: 50px;
+    font-family: monospace;
+    font-weight: bold;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+#popup_x:hover {
+    background-color: #b80454;
+    border-color: #470121;
+}
+#popup_textarea {
+    width: 85%;
+    height: 40%;
+    border: solid 4px #5d83e3;
+    border-radius: 7px;
+}
+
+.example_items {
+    border:5px solid #0f0759;
+    display: inline-block;
+    font-size: 110%;
+    border-radius: 4px;
+    margin: 3px;
+    padding: 2px 5px;
+    background-color: #033a91;
+    color: #e6efff;
+    font-weight: bolder;
+    cursor: pointer;
+    font-family: cursive;
+}
+.example_items:hover {
+    background-color: #0a053b;
+    color: #fff;
+    border-color: #000;
+}
+.tape_item {
+    border:1px solid #000;
+    display: inline-block;
+    font-size: 120%;
+    border-radius: 4px;
+    margin: 3px;
+    padding: 2px 5px;
+    background-color: #bfcaff;
+}
+.tape_item_blank {
+    border:1px solid #000;
+    display: inline-block;
+    font-size: 120%;
+    border-radius: 4px;
+    margin: 3px;
+    padding: 2px 5px;
+    background-color: #c2faff;
+}
+.tape_item_cur {
+    border:1px solid #000;
+    display: inline-block;
+    font-size: 120%;
+    font-weight: bolder;
+    /* font-family: monospace; */
+    border-radius: 4px;
+    margin: 3px;
+    padding: 2px 5px;
+    background-color: #9cffa7;
+}
+.cur_state {
+    border:1px solid #000;
+    display: inline-block;
+    font-size: 125%;
+    font-weight: bolder;
+    font-family: monospace;
+    border-radius: 4px;
+    margin: 3px;
+    padding: 2px 5px;
+    background-color: #9cffa7;
+}

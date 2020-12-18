@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>
+		Turing Emulator
+	</title>
+	<link href="styles/index.css?v=1" type="text/css" rel="stylesheet" />
+	<link rel="icon" href="res/favicon.ico">
+</head>
+
+
+<body>
+
+	<div id="non_hover">
+		<h1 id="page_title">
+			Turing Machine Emulator
+		</h1>
+
+		<button id='define_machine' class= 'btn_3'>Define Machine</button>
+		<button id='save_machine' class= 'btn_3'>Save</button>
+		<button id='load_machine' class= 'btn_3'>Load</button>
+		<button id='load_examples' class= 'btn_3'>Examples</button>
+
+
+		<div id='canvas_container'></div>
+	</div>
+
+
+	<div id="machine_def">
+		<div class="main_title">Machine def</div>
+
+		<div class='config_title'>states <a id="remove_state">Remove</a></div>
+		<div id='states'>No states defined</div>
+		<div class='config_title'>Transitions <a id="remove_transition">Remove</a></div>
+		<div id='transitions'>No transitions defined</div>
+		<div class="current_tape">
+			<div class='current_state_config_title' id='config_current_state'>Current state: <a class='tape_item_cur'> None </a></div>
+			<div class='tape_config_title'>Tape</div>
+			<div id='tape'>Machine not build yet</div>
+		</div>
+		<br /><br />
+	</div>
+
+
+	<div id="hover_container">
+
+		<div class='config_title'>add state names (comma seperated)</div>
+		<input type='text' class='ip_field' id='ip_states'>
+		<button class='btn_1' id='add_state'>Add</button>	
+		
+		<div class='config_title'>add Transitions (format: q0, a > q1, b, R)</div>
+		<input type='text' class='ip_field' id='ip_rules'>
+		<button class='btn_1' id='add_transition'>Add</button>
+
+		<div class='config_title'>Define tape (empty if not defined)</div>
+		<input type='text' class='ip_field' id='ip_tape'>
+		<button class='btn_1' id='set_tape'>Add</button>
+
+		<div id='create_machine_container'>
+			<button id="create_machine" class='btn_2'>Create machine from given rules</button>
+			<button id="close_create_machine_overlay" class='btn_2'>Cancel</button>
+		</div>
+	</div>
+
+	<div id="error">
+		<a id="error_x">X</a>
+		<div id="error_content"></div>
+	</div>
+
+	<div id="popup">
+		<a id="popup_x">X</a>
+		<div id="popup_content">saas</div>
+	</div>
+
+
+
+</body>
+<script type="text/javascript" src="script/examples.js"></script>
+<script type="text/javascript" src="script/machine.js"></script>
+<script type="text/javascript" src="script/ui.js"></script>
+<script type="text/javascript" src="script/ui_elements.js"></script>
+</html>
+
