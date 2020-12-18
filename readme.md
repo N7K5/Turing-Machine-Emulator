@@ -2,6 +2,8 @@
 
 ## A web based turing machine emulator...
 
+## [You can run it from browser here...](https://n7k5.github.io/Turing-Machine-Emulator/ "Turing machine emulator")
+
 ### Features:
 1. Unlimited transition function.
 2. Save and loding a machine.
@@ -17,3 +19,5 @@
     * note: states should be added first before using that state in a transition function.
 3. Define a custom tape or leave it blank.
 4. Click on "Run" and enjoy.
+
+### If you make some cool machines yourself, send the string to me and I will upload it as an example...
