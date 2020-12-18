@@ -11,7 +11,7 @@
 1. Unlimited transition function.
 2. Save and loding a machine.
 3. Examples to play with.
-4. Sun step by step.
+4. Run step by step.
 
 ---
 
